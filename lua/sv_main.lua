@@ -1,25 +1,25 @@
-local QBCore = exports['qbx-core']:GetCoreObject()
+local ESX = exports["es_extended"]:getSharedObject()
 BoardsCreated = {}
 
-QBCore.Functions.CreateUseableItem("chalkboard1", function(source, item)
+ESX.RegisterUsableItem("chalkboard1", function(source, item)
     local src = source
     exports.ox_inventory:RemoveItem(src, "chalkboard1", 1)
     TriggerClientEvent('chalkboards:client:setChalkboard1', src)
 end)
 
-QBCore.Functions.CreateUseableItem("chalkboard2", function(source, item)
+ESX.RegisterUsableItem("chalkboard2", function(source, item)
     local src = source
     exports.ox_inventory:RemoveItem(src, "chalkboard2", 1)
     TriggerClientEvent('chalkboards:client:setChalkboard2', src)
 end)
 
-QBCore.Functions.CreateUseableItem("chalkboard3", function(source, item)
+ESX.RegisterUsableItem("chalkboard3", function(source, item)
     local src = source
     exports.ox_inventory:RemoveItem(src, "chalkboard3", 1)
     TriggerClientEvent('chalkboards:client:setChalkboard3', src)
 end)
 
-QBCore.Functions.CreateUseableItem("chalkboard4", function(source, item)
+ESX.RegisterUsableItem("chalkboard4", function(source, item)
     local src = source
     exports.ox_inventory:RemoveItem(src, "chalkboard4", 1)
     TriggerClientEvent('chalkboards:client:setChalkboard4', src)
