@@ -1,4 +1,4 @@
-local QBCore = exports['qbx-core']:GetCoreObject()
+local ESX = exports["es_extended"]:getSharedObject()
 
 AddEventHandler('onResourceStart', function(resource)
     if resource == GetCurrentResourceName() then
@@ -6,21 +6,24 @@ AddEventHandler('onResourceStart', function(resource)
     end
 end)
 
-RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
-    PlayerData = QBCore.Functions.GetPlayerData()
+RegisterNetEvent('esx:onPlayerLoaded')
+AddEventHandler('esx:onPlayerLoaded', function()
+    ESX.GetPlayerData()
     loadData()
 end)
 
-RegisterNetEvent("QBCore:Client:OnJobUpdate", function(JobInfo)
+RegisterNetEvent('esx:setJob')
+AddEventHandler('esx:setJob', function(JobInfo)
     PlayerData.job = JobInfo
 end)
 
-RegisterNetEvent("QBCore:Client:OnPlayerUnload", function()
+RegisterNetEvent('esx:onPlayerLogout')
+AddEventHandler('esx:onPlayerLogout', function()
     PlayerData = {}
 end)
 
 function loadData()
-    PlayerData = QBCore.Functions.GetPlayerData()
+    ESX.GetPlayerData()
     for k,v in pairs(BoardModelToTexture) do
         RemoveReplaceTexture(v.texture, v.dict)
     end
@@ -66,8 +69,8 @@ function loadData()
 end
 
 RegisterNetEvent("chalkboards:client:setChalkboard1", function()
-    local input = lib.inputDialog("Choose Chalkboard Template", {
-        { type = "select", label = "Choose a template", description = "Board textures are duplicated based on template. Choose a different template if you want to display more than one board data", options = {
+    local input = lib.inputDialog("Wählen Sie Tafelvorlage", {
+        { type = "select", label = "Wählen Sie eine Vorlage", description = "Board-Texturen werden basierend auf der Vorlage dupliziert. Wählen Sie eine andere Vorlage, wenn Sie mehr als eine Board-Daten anzeigen möchten", options = {
             { label = "Template 1", value = "bzzz_chalkboards_1a" },
             { label = "Template 2", value = "bzzz_chalkboards_1b" },
             { label = "Template 3", value = "bzzz_chalkboards_1c" },
@@ -91,8 +94,8 @@ RegisterNetEvent("chalkboards:client:setChalkboard1", function()
 end)
 
 RegisterNetEvent("chalkboards:client:setChalkboard2", function()
-    local input = lib.inputDialog("Choose Chalkboard Template", {
-        { type = "select", label = "Choose a template", description = "Board textures are duplicated based on template. Choose a different template if you want to display more than one board data", options = {
+    local input = lib.inputDialog("Wählen Sie Tafelvorlage", {
+        { type = "select", label = "Wählen Sie eine Vorlage", description = "Board-Texturen werden basierend auf der Vorlage dupliziert. Wählen Sie eine andere Vorlage, wenn Sie mehr als eine Board-Daten anzeigen möchten", options = {
             { label = "Template 1", value = "bzzz_chalkboards_2f" },
             { label = "Template 2", value = "bzzz_chalkboards_2g" },
             { label = "Template 3", value = "bzzz_chalkboards_2h" },
@@ -116,8 +119,8 @@ RegisterNetEvent("chalkboards:client:setChalkboard2", function()
 end)
 
 RegisterNetEvent("chalkboards:client:setChalkboard3", function()
-    local input = lib.inputDialog("Choose Chalkboard Template", {
-        { type = "select", label = "Choose a template", description = "Board textures are duplicated based on template. Choose a different template if you want to display more than one board data", options = {
+    local input = lib.inputDialog("Wählen Sie Tafelvorlage", {
+        { type = "select", label = "Wählen Sie eine Vorlage", description = "Board-Texturen werden basierend auf der Vorlage dupliziert. Wählen Sie eine andere Vorlage, wenn Sie mehr als eine Board-Daten anzeigen möchten", options = {
             { label = "Template 1", value = "bzzz_chalkboards_3k" },
             { label = "Template 2", value = "bzzz_chalkboards_3l" },
             { label = "Template 3", value = "bzzz_chalkboards_3m" },
@@ -141,8 +144,8 @@ RegisterNetEvent("chalkboards:client:setChalkboard3", function()
 end)
 
 RegisterNetEvent("chalkboards:client:setChalkboard4", function()
-    local input = lib.inputDialog("Choose Chalkboard Template", {
-        { type = "select", label = "Choose a template", description = "Board textures are duplicated based on template. Choose a different template if you want to display more than one board data", options = {
+    local input = lib.inputDialog("Wählen Sie Tafelvorlage", {
+        { type = "select", label = "Wählen Sie eine Vorlage", description = "Board-Texturen werden basierend auf der Vorlage dupliziert. Wählen Sie eine andere Vorlage, wenn Sie mehr als eine Board-Daten anzeigen möchten", options = {
             { label = "Template 1", value = "bzzz_chalkboards_4p" },
             { label = "Template 2", value = "bzzz_chalkboards_4q" },
             { label = "Template 3", value = "bzzz_chalkboards_4r" },
@@ -181,7 +184,7 @@ RegisterNetEvent("chalkboards:client:setChalkboardContent", function(data)
         else
             lib.notify({
                 type = 'error',
-                title = 'You do not own this chalkboard.'
+                title = 'Diese Tafel gehört Ihnen nicht.'
             })
         end
     end
