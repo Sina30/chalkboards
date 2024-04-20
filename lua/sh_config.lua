@@ -12,7 +12,7 @@ function DoObjectSettingThing(model)
     SetEntityAlpha(object, 150)
     SetEntityCollision(object, false, false)
     FreezeEntityPosition(object, true)
-	lib.showTextUI('[SCROLL] Change Rotation | [E] Confirm')
+	lib.showTextUI('[SCROLL] Drehung ändern | [E] Bestätigen')
 	while settingObject do
         local hit, hitCoords = RayCastGamePlayCamera(20.0, object)
         if hit ~= 0 then
@@ -51,7 +51,7 @@ function DoObjectSettingThing2(model)
     SetEntityAlpha(object, 150)
     SetEntityCollision(object, false, false)
     FreezeEntityPosition(object, true)
-	lib.showTextUI('[SCROLL] Change Rotation | [E] Confirm')
+	lib.showTextUI('[SCROLL] Drehung ändern | [E] Bestätigen')
 	while settingObject do
         local hit, hitCoords = RayCastGamePlayCamera(20.0, object)
         if hit ~= 0 then
