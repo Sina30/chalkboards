@@ -1,13 +1,13 @@
 exports.ox_target:addModel({`bzzz_chalkboards_1a`, `bzzz_chalkboards_1b`, `bzzz_chalkboards_1c`, `bzzz_chalkboards_1d`, `bzzz_chalkboards_1e`}, {
     {
         icon = 'fa-solid fa-pen',
-        label = "Write Something",
+        label = "Schreibe etwas",
         distance = 4.0,
         event = 'chalkboards:client:setChalkboardContent',
     },
     {
         icon = 'fa-solid fa-trash-alt',
-        label = "Delete Chalkboard",
+        label = "Tafel löschen",
         event = 'chalkboards:client:deleteChalkboard',
         distance = 4.0,
         onSelect = function(data)
@@ -19,7 +19,7 @@ exports.ox_target:addModel({`bzzz_chalkboards_1a`, `bzzz_chalkboards_1b`, `bzzz_
                 else
                     lib.notify({
                         type = 'error',
-                        title = 'You do not own this chalkboard.'
+                        title = 'Diese Tafel gehört Ihnen nicht.'
                     })
                 end
             end
@@ -30,13 +30,13 @@ exports.ox_target:addModel({`bzzz_chalkboards_1a`, `bzzz_chalkboards_1b`, `bzzz_
 exports.ox_target:addModel({`bzzz_chalkboards_2f`, `bzzz_chalkboards_2g`, `bzzz_chalkboards_2h`, `bzzz_chalkboards_2i`, `bzzz_chalkboards_2j`}, {
     {
         icon = 'fa-solid fa-play',
-        label = "Write Something",
+        label = "Schreibe etwas",
         event = 'chalkboards:client:setChalkboardContent',
         distance = 4.0,
     },
     {
         icon = 'fa-solid fa-trash-alt',
-        label = "Delete Chalkboard",
+        label = "Tafel löschen",
         distance = 4.0,
         onSelect = function(data)
             local state = Entity(data.entity).state
@@ -47,7 +47,7 @@ exports.ox_target:addModel({`bzzz_chalkboards_2f`, `bzzz_chalkboards_2g`, `bzzz_
                 else
                     lib.notify({
                         type = 'error',
-                        title = 'You do not own this chalkboard.'
+                        title = 'Diese Tafel gehört Ihnen nicht.'
                     })
                 end
             end
@@ -58,13 +58,13 @@ exports.ox_target:addModel({`bzzz_chalkboards_2f`, `bzzz_chalkboards_2g`, `bzzz_
 exports.ox_target:addModel({`bzzz_chalkboards_3k`, `bzzz_chalkboards_3l`, `bzzz_chalkboards_3m`, `bzzz_chalkboards_3n`, `bzzz_chalkboards_3o`}, {
     {
         icon = 'fa-solid fa-play',
-        label = "Write Something",
+        label = "Schreibe etwas",
         event = 'chalkboards:client:setChalkboardContent',
         distance = 4.0,
     },
     {
         icon = 'fa-solid fa-trash-alt',
-        label = "Delete Chalkboard",
+        label = "Tafel löschen",
         distance = 4.0,
         onSelect = function(data)
             local state = Entity(data.entity).state
@@ -75,7 +75,7 @@ exports.ox_target:addModel({`bzzz_chalkboards_3k`, `bzzz_chalkboards_3l`, `bzzz_
                 else
                     lib.notify({
                         type = 'error',
-                        title = 'You do not own this chalkboard.'
+                        title = 'Diese Tafel gehört Ihnen nicht.'
                     })
                 end
             end
@@ -86,13 +86,13 @@ exports.ox_target:addModel({`bzzz_chalkboards_3k`, `bzzz_chalkboards_3l`, `bzzz_
 exports.ox_target:addModel({`bzzz_chalkboards_4p`, `bzzz_chalkboards_4q`, `bzzz_chalkboards_4r`, `bzzz_chalkboards_4s`, `bzzz_chalkboards_4t`}, {
     {
         icon = 'fa-solid fa-play',
-        label = "Write Something",
+        label = "Schreibe etwas",
         event = 'chalkboards:client:setChalkboardContent',
         distance = 4.0,
     },
     {
         icon = 'fa-solid fa-trash-alt',
-        label = "Delete Chalkboard",
+        label = "Tafel löschen",
         distance = 4.0,
         onSelect = function(data)
             local state = Entity(data.entity).state
@@ -103,7 +103,7 @@ exports.ox_target:addModel({`bzzz_chalkboards_4p`, `bzzz_chalkboards_4q`, `bzzz_
                 else
                     lib.notify({
                         type = 'error',
-                        title = 'You do not own this chalkboard.'
+                        title = 'Diese Tafel gehört Ihnen nicht.'
                     })
                 end
             end
