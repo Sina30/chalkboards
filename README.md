@@ -26,7 +26,7 @@ After placement, you can target the board to interact with a WYSIWYG text editor
 - ox_lib
 - ox_target
 - ox_inventory 
-- QBCore
+- ESX
 - BzZzi Chalkboards - [FiveM Forum Post](https://forum.cfx.re/t/props-free-chalkboards/5227369)
 
 ## Issues
